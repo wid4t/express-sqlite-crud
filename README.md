@@ -2,7 +2,6 @@
 To run this program, please type this command.
 
     > npx ts-node src/index.ts
-
 ### Test API
 #### Create Item
 
@@ -14,3 +13,9 @@ To run this program, please type this command.
 #### Read Item
 
     > curl http://localhost:3000/item/2
+#### Update Item
+
+    > curl -X PUT -H "Content-Type: application/json" -d "{\"name\":\"golang developer senior\", \"description\":\"create a application\"}" http://localhost:3000/item/2
+#### Delete Item
+
+    > curl -X DELETE http://localhost:3000/item/1

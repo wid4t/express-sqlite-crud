@@ -56,7 +56,7 @@ app.get('/item/:id', (req: Request, res: Response) => {
 });
 
 // Update item
-app.put('/items/:id', (req: Request, res: Response) => {
+app.put('/item/:id', (req: Request, res: Response) => {
     const itemId = req.params.id;
     const { name, description } = req.body;
     db.run('UPDATE items SET name = ?, description = ? WHERE id = ?', [name, description, itemId], function (err) {
@@ -69,7 +69,7 @@ app.put('/items/:id', (req: Request, res: Response) => {
 });
 
 // Delete item
-app.delete('/items/:id', (req: Request, res: Response) => {
+app.delete('/item/:id', (req: Request, res: Response) => {
     const itemId = req.params.id;
     db.run('DELETE FROM items WHERE id = ?', [itemId], function (err) {
         if (err) {
